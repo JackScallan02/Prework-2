@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,10 @@
 		04214709262A6BB800C41CF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04214707262A6BB800C41CF7 /* LaunchScreen.storyboard */; };
 		04214714262A6BB800C41CF7 /* Prework_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04214713262A6BB800C41CF7 /* Prework_2Tests.swift */; };
 		0421471F262A6BB800C41CF7 /* Prework_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421471E262A6BB800C41CF7 /* Prework_2UITests.swift */; };
+		04214730262A72E100C41CF7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421472F262A72E100C41CF7 /* SettingsViewController.swift */; };
+		2EC4145640C3EC1835D47912 /* Pods_Prework_2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1D0DEBF6483E50D73FB70A /* Pods_Prework_2Tests.framework */; };
+		5F1E8D12E2F20D6545B45537 /* Pods_Prework_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB386216065ABBCD4FA7D33 /* Pods_Prework_2.framework */; };
+		F5177E737A1D33E82A00A528 /* Pods_Prework_2_Prework_2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CE6CBB1D6EFB2BFB513807 /* Pods_Prework_2_Prework_2UITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		042146F9262A6BB700C41CF7 /* Prework-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prework-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		042146F9262A6BB700C41CF7 /* Tip Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tip Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		042146FC262A6BB700C41CF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		042146FE262A6BB700C41CF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		04214700262A6BB700C41CF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,12 +47,22 @@
 		04214705262A6BB800C41CF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04214708262A6BB800C41CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0421470A262A6BB800C41CF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0421470F262A6BB800C41CF7 /* Prework-2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prework-2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0421470F262A6BB800C41CF7 /* Tip CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tip CalculatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04214713262A6BB800C41CF7 /* Prework_2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prework_2Tests.swift; sourceTree = "<group>"; };
 		04214715262A6BB800C41CF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0421471A262A6BB800C41CF7 /* Prework-2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prework-2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0421471A262A6BB800C41CF7 /* Tip CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tip CalculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0421471E262A6BB800C41CF7 /* Prework_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prework_2UITests.swift; sourceTree = "<group>"; };
 		04214720262A6BB800C41CF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0421472F262A72E100C41CF7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		39011FF48F2C1034729C56F3 /* Pods-Prework-2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prework-2Tests.release.xcconfig"; path = "Target Support Files/Pods-Prework-2Tests/Pods-Prework-2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		5A1D0DEBF6483E50D73FB70A /* Pods_Prework_2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prework_2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3853663140CA351954FFFA /* Pods-Prework-2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prework-2.release.xcconfig"; path = "Target Support Files/Pods-Prework-2/Pods-Prework-2.release.xcconfig"; sourceTree = "<group>"; };
+		5E056777A174A566BC083F19 /* Pods-Prework-2-Prework-2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prework-2-Prework-2UITests.release.xcconfig"; path = "Target Support Files/Pods-Prework-2-Prework-2UITests/Pods-Prework-2-Prework-2UITests.release.xcconfig"; sourceTree = "<group>"; };
+		75C04749E0F846CDA7B40661 /* Pods-Prework-2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prework-2.debug.xcconfig"; path = "Target Support Files/Pods-Prework-2/Pods-Prework-2.debug.xcconfig"; sourceTree = "<group>"; };
+		95F48FB3E254980D0BAB53F0 /* Pods-Prework-2-Prework-2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prework-2-Prework-2UITests.debug.xcconfig"; path = "Target Support Files/Pods-Prework-2-Prework-2UITests/Pods-Prework-2-Prework-2UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		96CE6CBB1D6EFB2BFB513807 /* Pods_Prework_2_Prework_2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prework_2_Prework_2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBB386216065ABBCD4FA7D33 /* Pods_Prework_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prework_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE73C1EE47FDE32158438E15 /* Pods-Prework-2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prework-2Tests.debug.xcconfig"; path = "Target Support Files/Pods-Prework-2Tests/Pods-Prework-2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F1E8D12E2F20D6545B45537 /* Pods_Prework_2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EC4145640C3EC1835D47912 /* Pods_Prework_2Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5177E737A1D33E82A00A528 /* Pods_Prework_2_Prework_2UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,15 +100,17 @@
 				04214712262A6BB800C41CF7 /* Prework-2Tests */,
 				0421471D262A6BB800C41CF7 /* Prework-2UITests */,
 				042146FA262A6BB700C41CF7 /* Products */,
+				EDD6564F43B86E0DFA4FF122 /* Pods */,
+				B42B7089CB45C454514CF150 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		042146FA262A6BB700C41CF7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				042146F9262A6BB700C41CF7 /* Prework-2.app */,
-				0421470F262A6BB800C41CF7 /* Prework-2Tests.xctest */,
-				0421471A262A6BB800C41CF7 /* Prework-2UITests.xctest */,
+				042146F9262A6BB700C41CF7 /* Tip Calculator.app */,
+				0421470F262A6BB800C41CF7 /* Tip CalculatorTests.xctest */,
+				0421471A262A6BB800C41CF7 /* Tip CalculatorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +125,7 @@
 				04214705262A6BB800C41CF7 /* Assets.xcassets */,
 				04214707262A6BB800C41CF7 /* LaunchScreen.storyboard */,
 				0421470A262A6BB800C41CF7 /* Info.plist */,
+				0421472F262A72E100C41CF7 /* SettingsViewController.swift */,
 			);
 			path = "Prework-2";
 			sourceTree = "<group>";
@@ -128,30 +148,56 @@
 			path = "Prework-2UITests";
 			sourceTree = "<group>";
 		};
+		B42B7089CB45C454514CF150 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBB386216065ABBCD4FA7D33 /* Pods_Prework_2.framework */,
+				96CE6CBB1D6EFB2BFB513807 /* Pods_Prework_2_Prework_2UITests.framework */,
+				5A1D0DEBF6483E50D73FB70A /* Pods_Prework_2Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDD6564F43B86E0DFA4FF122 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75C04749E0F846CDA7B40661 /* Pods-Prework-2.debug.xcconfig */,
+				5B3853663140CA351954FFFA /* Pods-Prework-2.release.xcconfig */,
+				95F48FB3E254980D0BAB53F0 /* Pods-Prework-2-Prework-2UITests.debug.xcconfig */,
+				5E056777A174A566BC083F19 /* Pods-Prework-2-Prework-2UITests.release.xcconfig */,
+				CE73C1EE47FDE32158438E15 /* Pods-Prework-2Tests.debug.xcconfig */,
+				39011FF48F2C1034729C56F3 /* Pods-Prework-2Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		042146F8262A6BB700C41CF7 /* Prework-2 */ = {
+		042146F8262A6BB700C41CF7 /* Tip Calculator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04214723262A6BB800C41CF7 /* Build configuration list for PBXNativeTarget "Prework-2" */;
+			buildConfigurationList = 04214723262A6BB800C41CF7 /* Build configuration list for PBXNativeTarget "Tip Calculator" */;
 			buildPhases = (
+				FB848E9E1E7C4BF5E5F394E5 /* [CP] Check Pods Manifest.lock */,
 				042146F5262A6BB700C41CF7 /* Sources */,
 				042146F6262A6BB700C41CF7 /* Frameworks */,
 				042146F7262A6BB700C41CF7 /* Resources */,
+				78077F89E59988E3879DC8A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Prework-2";
+			name = "Tip Calculator";
 			productName = "Prework-2";
-			productReference = 042146F9262A6BB700C41CF7 /* Prework-2.app */;
+			productReference = 042146F9262A6BB700C41CF7 /* Tip Calculator.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0421470E262A6BB800C41CF7 /* Prework-2Tests */ = {
+		0421470E262A6BB800C41CF7 /* Tip CalculatorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04214726262A6BB800C41CF7 /* Build configuration list for PBXNativeTarget "Prework-2Tests" */;
+			buildConfigurationList = 04214726262A6BB800C41CF7 /* Build configuration list for PBXNativeTarget "Tip CalculatorTests" */;
 			buildPhases = (
+				CEB3D27A802743048EB43E1A /* [CP] Check Pods Manifest.lock */,
 				0421470B262A6BB800C41CF7 /* Sources */,
 				0421470C262A6BB800C41CF7 /* Frameworks */,
 				0421470D262A6BB800C41CF7 /* Resources */,
@@ -161,27 +207,29 @@
 			dependencies = (
 				04214711262A6BB800C41CF7 /* PBXTargetDependency */,
 			);
-			name = "Prework-2Tests";
+			name = "Tip CalculatorTests";
 			productName = "Prework-2Tests";
-			productReference = 0421470F262A6BB800C41CF7 /* Prework-2Tests.xctest */;
+			productReference = 0421470F262A6BB800C41CF7 /* Tip CalculatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		04214719262A6BB800C41CF7 /* Prework-2UITests */ = {
+		04214719262A6BB800C41CF7 /* Tip CalculatorUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04214729262A6BB800C41CF7 /* Build configuration list for PBXNativeTarget "Prework-2UITests" */;
+			buildConfigurationList = 04214729262A6BB800C41CF7 /* Build configuration list for PBXNativeTarget "Tip CalculatorUITests" */;
 			buildPhases = (
+				4365FDC7B3E086CA127E5D59 /* [CP] Check Pods Manifest.lock */,
 				04214716262A6BB800C41CF7 /* Sources */,
 				04214717262A6BB800C41CF7 /* Frameworks */,
 				04214718262A6BB800C41CF7 /* Resources */,
+				8C42BEF5FD34B54224F8B213 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				0421471C262A6BB800C41CF7 /* PBXTargetDependency */,
 			);
-			name = "Prework-2UITests";
+			name = "Tip CalculatorUITests";
 			productName = "Prework-2UITests";
-			productReference = 0421471A262A6BB800C41CF7 /* Prework-2UITests.xctest */;
+			productReference = 0421471A262A6BB800C41CF7 /* Tip CalculatorUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -206,7 +254,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 042146F4262A6BB700C41CF7 /* Build configuration list for PBXProject "Prework-2" */;
+			buildConfigurationList = 042146F4262A6BB700C41CF7 /* Build configuration list for PBXProject "Tip Calculator" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -219,9 +267,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				042146F8262A6BB700C41CF7 /* Prework-2 */,
-				0421470E262A6BB800C41CF7 /* Prework-2Tests */,
-				04214719262A6BB800C41CF7 /* Prework-2UITests */,
+				042146F8262A6BB700C41CF7 /* Tip Calculator */,
+				0421470E262A6BB800C41CF7 /* Tip CalculatorTests */,
+				04214719262A6BB800C41CF7 /* Tip CalculatorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -253,6 +301,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4365FDC7B3E086CA127E5D59 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Prework-2-Prework-2UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78077F89E59988E3879DC8A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Prework-2/Pods-Prework-2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Prework-2/Pods-Prework-2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Prework-2/Pods-Prework-2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C42BEF5FD34B54224F8B213 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Prework-2-Prework-2UITests/Pods-Prework-2-Prework-2UITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Prework-2-Prework-2UITests/Pods-Prework-2-Prework-2UITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Prework-2-Prework-2UITests/Pods-Prework-2-Prework-2UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEB3D27A802743048EB43E1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Prework-2Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB848E9E1E7C4BF5E5F394E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Prework-2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		042146F5262A6BB700C41CF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,6 +412,7 @@
 				04214701262A6BB700C41CF7 /* ViewController.swift in Sources */,
 				042146FD262A6BB700C41CF7 /* AppDelegate.swift in Sources */,
 				042146FF262A6BB700C41CF7 /* SceneDelegate.swift in Sources */,
+				04214730262A72E100C41CF7 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,12 +437,12 @@
 /* Begin PBXTargetDependency section */
 		04214711262A6BB800C41CF7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 042146F8262A6BB700C41CF7 /* Prework-2 */;
+			target = 042146F8262A6BB700C41CF7 /* Tip Calculator */;
 			targetProxy = 04214710262A6BB800C41CF7 /* PBXContainerItemProxy */;
 		};
 		0421471C262A6BB800C41CF7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 042146F8262A6BB700C41CF7 /* Prework-2 */;
+			target = 042146F8262A6BB700C41CF7 /* Tip Calculator */;
 			targetProxy = 0421471B262A6BB800C41CF7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -433,6 +585,7 @@
 		};
 		04214724262A6BB800C41CF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75C04749E0F846CDA7B40661 /* Pods-Prework-2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +605,7 @@
 		};
 		04214725262A6BB800C41CF7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B3853663140CA351954FFFA /* Pods-Prework-2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +625,7 @@
 		};
 		04214727262A6BB800C41CF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE73C1EE47FDE32158438E15 /* Pods-Prework-2Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,12 +642,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Prework-2.app/Prework-2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tip Calculator.app/Tip Calculator";
 			};
 			name = Debug;
 		};
 		04214728262A6BB800C41CF7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39011FF48F2C1034729C56F3 /* Pods-Prework-2Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -509,12 +665,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Prework-2.app/Prework-2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tip Calculator.app/Tip Calculator";
 			};
 			name = Release;
 		};
 		0421472A262A6BB800C41CF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95F48FB3E254980D0BAB53F0 /* Pods-Prework-2-Prework-2UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +692,7 @@
 		};
 		0421472B262A6BB800C41CF7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E056777A174A566BC083F19 /* Pods-Prework-2-Prework-2UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -556,7 +714,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		042146F4262A6BB700C41CF7 /* Build configuration list for PBXProject "Prework-2" */ = {
+		042146F4262A6BB700C41CF7 /* Build configuration list for PBXProject "Tip Calculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04214721262A6BB800C41CF7 /* Debug */,
@@ -565,7 +723,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04214723262A6BB800C41CF7 /* Build configuration list for PBXNativeTarget "Prework-2" */ = {
+		04214723262A6BB800C41CF7 /* Build configuration list for PBXNativeTarget "Tip Calculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04214724262A6BB800C41CF7 /* Debug */,
@@ -574,7 +732,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04214726262A6BB800C41CF7 /* Build configuration list for PBXNativeTarget "Prework-2Tests" */ = {
+		04214726262A6BB800C41CF7 /* Build configuration list for PBXNativeTarget "Tip CalculatorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04214727262A6BB800C41CF7 /* Debug */,
@@ -583,7 +741,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04214729262A6BB800C41CF7 /* Build configuration list for PBXNativeTarget "Prework-2UITests" */ = {
+		04214729262A6BB800C41CF7 /* Build configuration list for PBXNativeTarget "Tip CalculatorUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0421472A262A6BB800C41CF7 /* Debug */,
