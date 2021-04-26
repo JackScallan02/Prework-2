@@ -25,6 +25,7 @@ The following **additional** features are implemented:
 - [X] User can change between light and dark mode
 - [X] App icon and launch screen design
 - [X] A green checkmark was added to immediately update the calculations
+- [X] User can change the percentage amount
 
 ## Video Walkthrough
 
