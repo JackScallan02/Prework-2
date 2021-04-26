@@ -37,23 +37,38 @@ class ViewController: UIViewController {
         tipTextLabel.textColor = Settings.sharedInstance.textColor
         totalTextLabel.textColor = Settings.sharedInstance.textColor
         
+        
         let titleTextAttributes = [NSAttributedString.Key.foregroundColor: Settings.sharedInstance.segmentTextColor]
             tipControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
-        
         tipControl.selectedSegmentTintColor = Settings.sharedInstance.segmentColor
         
         
+        let tip1Num = Double(Settings.sharedInstance.tip1)!
+        let tip1 = String(format: "%.2f%%", tip1Num)
+        let tip2Num = Double(Settings.sharedInstance.tip2)!
+        let tip2 = String(format: "%.2f%%", tip2Num)
+        let tip3Num = Double(Settings.sharedInstance.tip3)!
+        let tip3 = String(format: "%.2f%%", tip3Num)
         
         
+        tipControl.setTitle(tip1, forSegmentAt: 0)
+        tipControl.setTitle(tip2, forSegmentAt: 1)
+        tipControl.setTitle(tip3, forSegmentAt: 2)
         
     }
     
     @IBAction func calculateTip(_ sender: Any) {
         
         let bill = Double(billAmountTextField.text!) ?? 0
-        let tipPercentages = [0.15, 0.2, 0.25]
+        
+        let tip1 = Double(Settings.sharedInstance.tip1)! / 100
+        let tip2 = Double(Settings.sharedInstance.tip2)! / 100
+        let tip3 = Double(Settings.sharedInstance.tip3)! / 100
+        
+        let tipPercentages = [tip1, tip2, tip3]
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
+        
         tipAmountLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
     }
@@ -65,13 +80,17 @@ class ViewController: UIViewController {
     
 }
 
-    class Settings {
-        static let sharedInstance = Settings()
-        var backgroundColor = UIColor.white
-        var boxColor = UIColor.white
-        var textColor = UIColor.black
-        var tint = UIColor.white
-        var segmentColor = UIColor.white
-        var segmentTextColor = UIColor.black
-    }
+class Settings {
+    static let sharedInstance = Settings()
+    var backgroundColor = UIColor.white
+    var boxColor = UIColor.white
+    var textColor = UIColor.black
+    var tint = UIColor.white
+    var segmentColor = UIColor.white
+    var segmentTextColor = UIColor.black
+    
+    var tip1 = "15"
+    var tip2 = "20"
+    var tip3 = "25"
+}
 
