@@ -17,9 +17,14 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var tip2TextField: UITextField!
     @IBOutlet weak var tip3TextField: UITextField!
     
+    @IBOutlet weak var redMessageLabel: UILabel!
+    @IBOutlet weak var greenMessageLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Settings"
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
 
     @IBAction func lightModeOn(_ sender: Any) {
@@ -40,6 +45,9 @@ class SettingsViewController: UIViewController {
         tip1TextField.textColor = .black
         tip2TextField.textColor = .black
         tip3TextField.textColor = .black
+        
+        Settings.sharedInstance.lightMode = true
+        Settings.sharedInstance.darkMode = false
 
     }
     
@@ -64,24 +72,72 @@ class SettingsViewController: UIViewController {
         Settings.sharedInstance.segmentTextColor = .white
         Settings.sharedInstance.segmentColor = .gray
         
+        Settings.sharedInstance.darkMode = true
+        Settings.sharedInstance.lightMode = false
+        
         
     }
     
     
     
     @IBAction func confirmChanges(_ sender: Any) {
-        Settings.sharedInstance.tip1 = tip1TextField.text!
-        Settings.sharedInstance.tip2 = tip2TextField.text!
-        Settings.sharedInstance.tip3 = tip3TextField.text!
+        Settings.sharedInstance.tip1 = tip1TextField.text ?? "15"
+        Settings.sharedInstance.tip2 = tip2TextField.text ?? "20"
+        Settings.sharedInstance.tip3 = tip3TextField.text ?? "25"
+        
+        redMessageLabel.isHidden = true
+        greenMessageLabel.isHidden = false
+        tip1TextField.text = ""
+        tip2TextField.text = ""
+        tip3TextField.text = ""
+        tip1TextField.becomeFirstResponder()
+        dismissKeyboard()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.greenMessageLabel.isHidden = true
+        }
     }
     
     
+    @IBAction func tip1TextFieldChanged(_ sender: Any) {
+        textFieldChanged()
+    }
     
+    @IBAction func tip2TextFieldChanged(_ sender: Any) {
+        textFieldChanged()
+    }
+    
+    @IBAction func tip3TextFieldChanged(_ sender: Any) {
+        textFieldChanged()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         view.backgroundColor = Settings.sharedInstance.backgroundColor
+        
+        if Settings.sharedInstance.lightMode == true {
+            lightModeOn(Any.self)
+        } else {
+            darkModeOn(Any.self)
+        }
     }
     
+    func allFieldsEmpty() -> Bool {
+        if tip1TextField.text == "" && tip2TextField.text == "" && tip3TextField.text == "" {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func textFieldChanged() {
+        redMessageLabel.isHidden = false
+        if allFieldsEmpty() {
+            redMessageLabel.isHidden = true
+        }
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 
 }
 

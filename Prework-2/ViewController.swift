@@ -17,16 +17,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipTextLabel: UILabel!
     @IBOutlet weak var totalTextLabel: UILabel!
     
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Tip Calculator"
+        billAmountTextField.becomeFirstResponder()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        
         view.backgroundColor = Settings.sharedInstance.backgroundColor
         billAmountTextField.textColor =
             Settings.sharedInstance.textColor
@@ -43,11 +44,11 @@ class ViewController: UIViewController {
         tipControl.selectedSegmentTintColor = Settings.sharedInstance.segmentColor
         
         
-        let tip1Num = Double(Settings.sharedInstance.tip1)!
+        let tip1Num = Double(Settings.sharedInstance.tip1) ?? 15
         let tip1 = String(format: "%.2f%%", tip1Num)
-        let tip2Num = Double(Settings.sharedInstance.tip2)!
+        let tip2Num = Double(Settings.sharedInstance.tip2) ?? 20
         let tip2 = String(format: "%.2f%%", tip2Num)
-        let tip3Num = Double(Settings.sharedInstance.tip3)!
+        let tip3Num = Double(Settings.sharedInstance.tip3) ?? 25
         let tip3 = String(format: "%.2f%%", tip3Num)
         
         
@@ -55,15 +56,17 @@ class ViewController: UIViewController {
         tipControl.setTitle(tip2, forSegmentAt: 1)
         tipControl.setTitle(tip3, forSegmentAt: 2)
         
+        billAmountTextField.becomeFirstResponder()
+        
     }
     
     @IBAction func calculateTip(_ sender: Any) {
         
         let bill = Double(billAmountTextField.text!) ?? 0
         
-        let tip1 = Double(Settings.sharedInstance.tip1)! / 100
-        let tip2 = Double(Settings.sharedInstance.tip2)! / 100
-        let tip3 = Double(Settings.sharedInstance.tip3)! / 100
+        let tip1 = (Double(Settings.sharedInstance.tip1) ?? 15) / 100
+        let tip2 = (Double(Settings.sharedInstance.tip2) ?? 20) / 100
+        let tip3 = (Double(Settings.sharedInstance.tip3) ?? 25) / 100
         
         let tipPercentages = [tip1, tip2, tip3]
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
@@ -73,12 +76,21 @@ class ViewController: UIViewController {
         totalLabel.text = String(format: "$%.2f", total)
     }
     
-    @IBAction func confirmButton(_ sender: Any) {
-        self.calculateTip(Any.self)
+
+    
+    @IBAction func typeInBillAmountField(_ sender: Any) {
+        calculateTip(sender)
     }
     
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+
+    
 }
+
 
 class Settings {
     static let sharedInstance = Settings()
@@ -92,5 +104,8 @@ class Settings {
     var tip1 = "15"
     var tip2 = "20"
     var tip3 = "25"
+    
+    var darkMode = false
+    var lightMode = true
 }
 
