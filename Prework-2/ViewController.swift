@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var billAmountTextLabel: UILabel!
     @IBOutlet weak var tipTextLabel: UILabel!
     @IBOutlet weak var totalTextLabel: UILabel!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,13 +86,13 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
-
-    
 }
 
 
 class Settings {
+    
     static let sharedInstance = Settings()
+    
     var backgroundColor = UIColor.white
     var boxColor = UIColor.white
     var textColor = UIColor.black
