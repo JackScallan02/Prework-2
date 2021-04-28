@@ -26,6 +26,7 @@ The following **additional** features are implemented:
 - [X] App icon and launch screen design
 - [X] User can change the percentage amounts
 - [X] Green/Red confirmation messages pop up
+- [X] Works on multiple devices
 
 ## Video Walkthrough
 
