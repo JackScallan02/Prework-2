@@ -7,8 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, DataDelegate {
+    
+    var tipValues: [Float] = [15, 20, 25]
+        
     @IBOutlet weak var billAmountTextField: UITextField!
     @IBOutlet weak var tipAmountLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
@@ -25,47 +27,75 @@ class ViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    
+    func sendTips(tips: [String?]) {
         
-        view.backgroundColor = Settings.sharedInstance.backgroundColor
-        billAmountTextField.textColor =
-            Settings.sharedInstance.textColor
-        billAmountTextField.backgroundColor = Settings.sharedInstance.boxColor
-        tipAmountLabel.textColor = Settings.sharedInstance.textColor
-        totalLabel.textColor = Settings.sharedInstance.textColor
-        billAmountTextLabel.textColor = Settings.sharedInstance.textColor
-        tipTextLabel.textColor = Settings.sharedInstance.textColor
-        totalTextLabel.textColor = Settings.sharedInstance.textColor
+        let tip1String = tips[0]!
+        let tip1Float = Float(tip1String) ?? 15
+        let tip2String = tips[1]!
+        let tip2Float = Float(tip2String) ?? 20
+        let tip3String = tips[2]!
+        let tip3Float = Float(tip3String) ?? 25
         
+        tipValues = [tip1Float, tip2Float, tip3Float]
         
-        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: Settings.sharedInstance.segmentTextColor]
-            tipControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
-        tipControl.selectedSegmentTintColor = Settings.sharedInstance.segmentColor
-        
-        
-        let tip1Num = Double(Settings.sharedInstance.tip1) ?? 15
-        let tip1 = String(format: "%.2f%%", tip1Num)
-        let tip2Num = Double(Settings.sharedInstance.tip2) ?? 20
-        let tip2 = String(format: "%.2f%%", tip2Num)
-        let tip3Num = Double(Settings.sharedInstance.tip3) ?? 25
-        let tip3 = String(format: "%.2f%%", tip3Num)
+        let tip1 = String(format: "%.2f%%", tip1Float)
+        let tip2 = String(format: "%.2f%%", tip2Float)
+        let tip3 = String(format: "%.2f%%", tip3Float)
         
         
         tipControl.setTitle(tip1, forSegmentAt: 0)
         tipControl.setTitle(tip2, forSegmentAt: 1)
         tipControl.setTitle(tip3, forSegmentAt: 2)
         
-        billAmountTextField.becomeFirstResponder()
-        
     }
+    
+    
+    func lightMode(mode: Bool) {
+        let lightBlack = UIColor(red: 33/255, green: 33/255, blue: 33/255, alpha: 1.0)
+        
+        if mode == false { //dark mode
+            view.backgroundColor = lightBlack
+            billAmountTextField.textColor = .white
+            billAmountTextField.backgroundColor = .darkGray
+            tipAmountLabel.textColor = .white
+            totalLabel.textColor = .white
+            billAmountTextLabel.textColor = .white
+            tipTextLabel.textColor = .white
+            totalTextLabel.textColor = .white
+            
+            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+                tipControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
+            tipControl.selectedSegmentTintColor = .darkGray
+            
+            LD_Mode.sharedInstance.lightMode = false
+            
+        } else { //light mode
+            view.backgroundColor = .white
+            billAmountTextField.textColor = .black
+            billAmountTextField.backgroundColor = .white
+            tipAmountLabel.textColor = .black
+            totalLabel.textColor = .black
+            billAmountTextLabel.textColor = .black
+            tipTextLabel.textColor = .black
+            totalTextLabel.textColor = .black
+            
+            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+                tipControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
+            tipControl.selectedSegmentTintColor = .white
+            
+            LD_Mode.sharedInstance.lightMode = true
+        }
+    }
+    
     
     @IBAction func calculateTip(_ sender: Any) {
         
-        let bill = Double(billAmountTextField.text!) ?? 0
+        let bill = Float(billAmountTextField.text!) ?? 0
         
-        let tip1 = (Double(Settings.sharedInstance.tip1) ?? 15) / 100
-        let tip2 = (Double(Settings.sharedInstance.tip2) ?? 20) / 100
-        let tip3 = (Double(Settings.sharedInstance.tip3) ?? 25) / 100
+        let tip1 = tipValues[0] / 100
+        let tip2 = tipValues[1] / 100
+        let tip3 = tipValues[2] / 100
         
         let tipPercentages = [tip1, tip2, tip3]
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
@@ -75,10 +105,23 @@ class ViewController: UIViewController {
         totalLabel.text = String(format: "$%.2f", total)
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let secondVC: SettingsViewController = segue.destination as! SettingsViewController
+        secondVC.delegate = self
+        
+    }
 
     
     @IBAction func typeInBillAmountField(_ sender: Any) {
         calculateTip(sender)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        billAmountTextField.becomeFirstResponder()
+
     }
     
     
@@ -87,24 +130,3 @@ class ViewController: UIViewController {
     }
     
 }
-
-
-class Settings {
-    
-    static let sharedInstance = Settings()
-    
-    var backgroundColor = UIColor.white
-    var boxColor = UIColor.white
-    var textColor = UIColor.black
-    var tint = UIColor.white
-    var segmentColor = UIColor.white
-    var segmentTextColor = UIColor.black
-    
-    var tip1 = "15"
-    var tip2 = "20"
-    var tip3 = "25"
-    
-    var darkMode = false
-    var lightMode = true
-}
-

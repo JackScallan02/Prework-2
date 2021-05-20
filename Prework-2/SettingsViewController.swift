@@ -7,8 +7,19 @@
 
 import UIKit
 
+protocol DataDelegate {
+    func sendTips(tips: [String?])
+    func lightMode(mode: Bool)
+}
+
 class SettingsViewController: UIViewController {
     
+    var delegate:DataDelegate?
+    var lightMode:DataDelegate?
+    
+    var light = true
+    var dark = false
+        
     @IBOutlet weak var tip1Label: UILabel!
     @IBOutlet weak var tip2Label: UILabel!
     @IBOutlet weak var tip3Label: UILabel!
@@ -25,73 +36,72 @@ class SettingsViewController: UIViewController {
         self.title = "Settings"
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
     }
+    
+    
+    func LD_On(on: Bool) {
+        if on == true {
+            lightModeOn(Any.self)
+            print("here1")
+        } else {
+            darkModeOn(Any.self)
+            print("here2")
+        }
+    }
+    
 
     @IBAction func lightModeOn(_ sender: Any) {
         
-        if Settings.sharedInstance.lightMode == false {
+        self.delegate?.lightMode(mode: true)
             
-            view.backgroundColor = .white
-
-            Settings.sharedInstance.backgroundColor = .white
-            Settings.sharedInstance.boxColor = .white
-            Settings.sharedInstance.textColor = .black
-            Settings.sharedInstance.segmentColor = UIColor.black
-            Settings.sharedInstance.tint = .white
-            Settings.sharedInstance.segmentTextColor = .black
-            Settings.sharedInstance.segmentColor = .white
-            
-            tip1Label.textColor = .black
-            tip2Label.textColor = .black
-            tip3Label.textColor = .black
-            tip1TextField.backgroundColor = .white
-            tip2TextField.backgroundColor = .white
-            tip3TextField.backgroundColor = .white
-            tip1TextField.textColor = .black
-            tip2TextField.textColor = .black
-            tip3TextField.textColor = .black
-            
-            Settings.sharedInstance.lightMode = true
-            Settings.sharedInstance.darkMode = false
-        }
-
+        view.backgroundColor = .white
+        tip1Label.textColor = .black
+        tip2Label.textColor = .black
+        tip3Label.textColor = .black
+        tip1TextField.backgroundColor = .white
+        tip2TextField.backgroundColor = .white
+        tip3TextField.backgroundColor = .white
+        tip1TextField.textColor = .black
+        tip2TextField.textColor = .black
+        tip3TextField.textColor = .black
+        
+        LD_Mode.sharedInstance.lightMode = true
     }
+    
     
     @IBAction func darkModeOn(_ sender: Any) {
         
-        if Settings.sharedInstance.darkMode == false {
+        self.delegate?.lightMode(mode: false)
             
-            let lightBlack = UIColor(red: 33/255, green: 33/255, blue: 33/255, alpha: 1.0)
-            view.backgroundColor = lightBlack
-            
-            tip1Label.textColor = .white
-            tip2Label.textColor = .white
-            tip3Label.textColor = .white
-            tip1TextField.backgroundColor = .darkGray
-            tip2TextField.backgroundColor = .darkGray
-            tip3TextField.backgroundColor = .darkGray
-            tip1TextField.textColor = .white
-            tip2TextField.textColor = .white
-            tip3TextField.textColor = .white
-
-            Settings.sharedInstance.backgroundColor = lightBlack
-            Settings.sharedInstance.boxColor = .darkGray
-            Settings.sharedInstance.textColor = .white
-            Settings.sharedInstance.segmentColor = .white
-            Settings.sharedInstance.tint = .darkGray
-            Settings.sharedInstance.segmentTextColor = .white
-            Settings.sharedInstance.segmentColor = .gray
-            
-            Settings.sharedInstance.darkMode = true
-            Settings.sharedInstance.lightMode = false
-        }
+        let lightBlack = UIColor(red: 33/255, green: 33/255, blue: 33/255, alpha: 1.0)
+        view.backgroundColor = lightBlack
+        tip1Label.textColor = .white
+        tip2Label.textColor = .white
+        tip3Label.textColor = .white
+        tip1TextField.backgroundColor = .darkGray
+        tip2TextField.backgroundColor = .darkGray
+        tip3TextField.backgroundColor = .darkGray
+        tip1TextField.textColor = .white
+        tip2TextField.textColor = .white
+        tip3TextField.textColor = .white
         
+        LD_Mode.sharedInstance.lightMode = false
+        
+        
+
     }
     
+    
     @IBAction func confirmChanges(_ sender: Any) {
-        Settings.sharedInstance.tip1 = tip1TextField.text ?? "15"
-        Settings.sharedInstance.tip2 = tip2TextField.text ?? "20"
-        Settings.sharedInstance.tip3 = tip3TextField.text ?? "25"
+
+        let tip1 = tip1TextField.text
+        let tip2 = tip2TextField.text
+        let tip3 = tip3TextField.text
+        
+        let dataToSend = [tip1, tip2, tip3]
+        self.delegate?.sendTips(tips: dataToSend)
+        
         
         redMessageLabel.isHidden = true
         greenMessageLabel.isHidden = false
@@ -107,6 +117,8 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    
+    
     @IBAction func tip1TextFieldChanged(_ sender: Any) {
         textFieldChanged()
     }
@@ -120,15 +132,21 @@ class SettingsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
-        if Settings.sharedInstance.lightMode == true {
-            Settings.sharedInstance.lightMode = false
+        if LD_Mode.sharedInstance.lightMode == true {
             lightModeOn(Any.self)
         } else {
-            Settings.sharedInstance.darkMode = false
             darkModeOn(Any.self)
         }
     }
+    
+    
+    func textFieldChanged() {
+        redMessageLabel.isHidden = false
+        if allFieldsEmpty() {
+            redMessageLabel.isHidden = true
+        }
+    }
+    
     
     func allFieldsEmpty() -> Bool {
         if tip1TextField.text == "" && tip2TextField.text == "" && tip3TextField.text == "" {
@@ -138,17 +156,16 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    func textFieldChanged() {
-        redMessageLabel.isHidden = false
-        if allFieldsEmpty() {
-            redMessageLabel.isHidden = true
-        }
-    }
-    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
 
+}
+
+
+class LD_Mode {
+    static let sharedInstance = LD_Mode()
+    var lightMode = true
 }
 
 
